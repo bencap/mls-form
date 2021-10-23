@@ -11,6 +11,12 @@ router.get('/club/:name', (req, res) => {
 router.get('/club/fixture/:name', (req, res) => {
     clubService.getClubFixtures(req, res);
 });
+router.get('/stats', (req, res) => {
+    clubService.getStats(req, res);
+});
+router.get('/stats/:name', (req, res) => {
+    clubService.getClubStats(req, res);
+});
 
 
-module.exports=router;
+module.exports = router;
