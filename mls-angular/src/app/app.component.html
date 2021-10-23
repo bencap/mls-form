@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+<title>MLS Form</title>
+</head>
+<mat-toolbar color="primary">
+    <div fxShow="true">
+        <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+
+    <span class="spacer"> {{ title }} </span>
+    <a mat-icon-button href="https://github.com/bencap/mls-form/stargazers" class="favorite-icon" target="_blank" aria-label="icon-button heart icon">
+        <mat-icon>favorite</mat-icon>
+    </a>
+    <a mat-icon-button class="share-icon" aria-label="icon-button share icon">
+        <mat-icon>share</mat-icon>
+    </a>
+</mat-toolbar>
+​
+<mat-drawer-container class="container">
+  <mat-drawer #sidenav mode="over" opened="false">
+    <div fxLayout="column" fxLayoutAlign="space-around start">
+      <a mat-button routerLink="/" (click)="sidenav.toggle()">Home</a>
+      <a mat-button routerLink="/mls" (click)="sidenav.toggle()">Major League Soccer</a>
+      <a mat-button routerLink="/epl" (click)="sidenav.toggle()">English Premier League</a>
+      <a mat-button routerLink="/spl" (click)="sidenav.toggle()">La Liga</a>
+      <a mat-button routerLink="/fpl" (click)="sidenav.toggle()">Ligue 1</a>
+      <a mat-button routerLink="/gpl" (click)="sidenav.toggle()">Bundesliga</a>
+      <a mat-button routerLink="/ipl" (click)="sidenav.toggle()">Serie A</a>
+      <a mat-button routerLink="/about" (click)="sidenav.toggle()">About</a>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content fxFlexFill>
+      <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+</html>
