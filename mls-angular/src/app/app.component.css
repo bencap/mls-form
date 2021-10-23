@@ -1,0 +1,28 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.companyName{
+    font-size: 150%;
+}
+
+.mat-toolbar{
+  height: 7vh;
+}
+
+div {
+    overflow: inherit;
+}
+
+button{
+    font-size: 110%;
+    min-width: min-content;
+}
+
+.favorite-icon {
+    padding: 0 14px;
+  }
+
+.share-icon {
+    padding: 0 14px;
+  }

@@ -1,14 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { MLSHomeComponent } from './mls-home/containers/mls-home.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MLSHomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatTableModule,
+    MatSortModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot([
+      { path: '', pathMatch: 'full', redirectTo: 'index'},
+      { path: 'mls', pathMatch: 'full', redirectTo: 'mls-home'},
+      { path: 'mls-home', component: MLSHomeComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
