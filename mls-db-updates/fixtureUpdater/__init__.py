@@ -81,6 +81,7 @@ def buildClubRecord(club, clubComplete, clubUpcoming):
     upcoming = [recordFromRow(club, row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], False) for row in zip(clubUpcoming["Day"], clubUpcoming["Date"],
                                                                                                                     clubUpcoming["Time"], clubUpcoming["Home"], clubUpcoming["xG"], clubUpcoming["Score"], clubUpcoming["Away"], clubUpcoming["xG.1"])]
 
+    # TODO: scrape east/west or add east/west somehow
     record = {
         "club": club,
         "scores": complete,
