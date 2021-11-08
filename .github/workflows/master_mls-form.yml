@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    defaults:
+      run: 
+        working-directory: mls-angular
 
     steps:
       - uses: actions/checkout@v2
@@ -40,6 +43,9 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    defaults:
+      run:
+        working-directory: mls-angular
 
     steps:
       - name: Download artifact from build job
