@@ -26,13 +26,13 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/mls-angular
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/mls-angular
+          path: ${{env.DOTNET_ROOT}}
 
   deploy:
     runs-on: windows-latest
@@ -46,7 +46,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: .net-app
-          path: mls-form
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
