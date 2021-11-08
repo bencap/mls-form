@@ -1,22 +1,11 @@
-.spacer {
-  flex: 1 1 auto;
-}
-
-.companyName{
-    font-size: 150%;
-}
 
 .mat-toolbar{
   height: 7vh;
+  margin-bottom: 0%;
 }
 
-div {
-    overflow: inherit;
-}
-
-button{
-    font-size: 110%;
-    min-width: min-content;
+.spacer {
+  flex: 1 1 auto;
 }
 
 .favorite-icon {

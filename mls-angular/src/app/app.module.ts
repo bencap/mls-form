@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { MLSHomeComponent } from './mls-home/containers/mls-home.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav'; 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSortModule } from '@angular/material/sort';
@@ -23,6 +24,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatToolbarModule,
     MatSidenavModule,
     MatTableModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatSortModule,
     HttpClientModule,
     BrowserAnimationsModule,

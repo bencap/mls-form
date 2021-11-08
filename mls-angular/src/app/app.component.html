@@ -4,40 +4,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
-<title>MLS Form</title>
 </head>
-<mat-toolbar color="primary">
+
+  <mat-toolbar color="primary">
     <div fxShow="true">
-        <button mat-icon-button (click)="sidenav.toggle()">
+      <button mat-raised-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
-        </button>
+      </button>
     </div>
 
-    <span class="spacer"> {{ title }} </span>
-    <a mat-icon-button href="https://github.com/bencap/mls-form/stargazers" class="favorite-icon" target="_blank" aria-label="icon-button heart icon">
-        <mat-icon>favorite</mat-icon>
+    <span> {{title}} </span>
+    <span class="spacer"></span>
+    <a mat-icon-button href="https://github.com/bencap/mls-form/stargazers" class="favorite-icon" target="_blank" aria-label="icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
     </a>
-    <a mat-icon-button class="share-icon" aria-label="icon-button share icon">
-        <mat-icon>share</mat-icon>
+    <a mat-icon-button class="share-icon" aria-label="icon-button with share icon">
+      <mat-icon>share</mat-icon>
     </a>
-</mat-toolbar>
-​
-<mat-drawer-container class="container">
-  <mat-drawer #sidenav mode="over" opened="false">
-    <div fxLayout="column" fxLayoutAlign="space-around start">
-      <a mat-button routerLink="/" (click)="sidenav.toggle()">Home</a>
-      <a mat-button routerLink="/mls" (click)="sidenav.toggle()">Major League Soccer</a>
-      <a mat-button routerLink="/epl" (click)="sidenav.toggle()">English Premier League</a>
-      <a mat-button routerLink="/spl" (click)="sidenav.toggle()">La Liga</a>
-      <a mat-button routerLink="/fpl" (click)="sidenav.toggle()">Ligue 1</a>
-      <a mat-button routerLink="/gpl" (click)="sidenav.toggle()">Bundesliga</a>
-      <a mat-button routerLink="/ipl" (click)="sidenav.toggle()">Serie A</a>
-      <a mat-button routerLink="/about" (click)="sidenav.toggle()">About</a>
+  </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav color="primary" #sidenav class="sidenav-drawer" fxLayout="column" mode="over" opened="false">
+    <div fxLayout="column">
+      <p><button mat-raised-button routerLink="/" (click)="sidenav.toggle()" >Home</button></p>
+      <p><button mat-raised-button routerLink="/mls" (click)="sidenav.toggle()">Major League Soccer</button></p>
+      <p><button mat-raised-button routerLink="/epl" (click)="sidenav.toggle()">English Premier League</button></p>
+      <p><button mat-raised-button routerLink="/spl" (click)="sidenav.toggle()">La Liga</button></p>
+      <p><button mat-raised-button routerLink="/fpl" (click)="sidenav.toggle()">Ligue 1</button></p>
+      <p><button mat-raised-button routerLink="/gpl" (click)="sidenav.toggle()">Bundesliga</button></p>
+      <p><button mat-raised-button routerLink="/ipl" (click)="sidenav.toggle()">Serie A</button></p>
+      <p><button mat-raised-button routerLink="/about" (click)="sidenav.toggle()">About</button></p>
     </div>
-  </mat-drawer>
-  <mat-drawer-content fxFlexFill>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill>
       <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
 </html>

@@ -12,7 +12,7 @@
         "@schematics/angular:component": {
           "inlineTemplate": true,
           "inlineStyle": true,
-          "style": "css",
+          "style": "scss",
           "skipTests": true
         },
         "@schematics/angular:class": {
@@ -49,13 +49,14 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "css",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "src/themes.scss"
             ],
             "scripts": []
           },
@@ -99,7 +100,8 @@
               "browserTarget": "mls-angular:build:production"
             },
             "development": {
-              "browserTarget": "mls-angular:build:development"
+              "browserTarget": "mls-angular:build:development",
+              "proxyConfig": "proxy.config.json"
             }
           },
           "defaultConfiguration": "development"
